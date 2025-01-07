@@ -1,0 +1,7 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/RogeLike/MenuStyles.uss?fileID=7433441132597879392&amp;guid=dd0a18f369c4f4a43b7572029c521b2f&amp;type=3#MenuStyles" />
+    <engine:VisualElement name="BackGround" style="flex-grow: 1; background-color: rgb(0, 0, 0); background-image: url(&quot;project://database/Assets/RogeLike/CourseAssets/Textures/SpritesNotInAtlas/MainMenu.png?fileID=2800000&amp;guid=7982f2173aaf35042970eeb32efb1c8f&amp;type=3#MainMenu&quot;);">
+        <engine:VisualElement name="BottonContanier" style="flex-grow: 1;" />
+        <engine:Button text="Back" name="Back" class="menu-botton menu-button" style="background-color: rgba(164, 164, 164, 0); -unity-background-image-tint-color: rgb(255, 255, 255); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); width: 250px; height: 100px; flex-direction: column; flex-shrink: 0; flex-grow: 0; align-self: center; margin-bottom: 50px; color: rgb(19, 255, 0); -unity-font-style: bold; -unity-font-definition: url(&quot;project://database/Assets/RogeLike/CourseAssets/Fonts/dlxfont.ttf?fileID=12800000&amp;guid=b88d2d65f822f874c995271ef43f2607&amp;type=3#dlxfont&quot;); font-size: 50px;" />
+    </engine:VisualElement>
+</engine:UXML>

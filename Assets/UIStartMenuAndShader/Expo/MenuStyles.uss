@@ -1,0 +1,25 @@
+.menu-button {
+    font-size: 20px;
+    -unity-font-style: bold;
+    -unity-font-definition: url("project://database/Assets/RogeLike/CourseAssets/Fonts/dlxfont.ttf?fileID=12800000&guid=b88d2d65f822f874c995271ef43f2607&type=3#dlxfont");
+    color: rgb(25, 255, 0);
+    -unity-background-image-tint-color: rgb(7, 7, 7);
+    background-color: rgba(180, 23, 23, 0.13);
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    margin-bottom: 50px;
+}
+
+.menu-botton:hover {
+    font-size: 26px;
+    -unity-font-definition: url("project://database/Assets/RogeLike/CourseAssets/Fonts/dlxfont.ttf?fileID=12800000&guid=b88d2d65f822f874c995271ef43f2607&type=3#dlxfont");
+    color: rgb(255, 130, 0);
+    rotate: -5deg;
+    transition-duration: 0.3s;
+    border-left-color: rgba(255, 0, 0, 0);
+    border-right-color: rgba(255, 0, 0, 0);
+    border-top-color: rgba(255, 0, 0, 0);
+    border-bottom-color: rgba(255, 0, 0, 0);
+}
