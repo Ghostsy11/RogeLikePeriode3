@@ -7,10 +7,10 @@ public class AimmingDireaction : MonoBehaviour
 {
 
 
-    [SerializeField] float gundistance;
-    [SerializeField] Transform gun;
+    [SerializeField] float gunDistance;
+    public List<GameObject> gun;
+    public int index;
     [SerializeField] bool gunFacingRight;
-    float lookAngle;
 
     private void Awake()
     {
@@ -25,25 +25,33 @@ public class AimmingDireaction : MonoBehaviour
 
     private void Aimming()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 direaction = mousePos - transform.position;
 
-        gun.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(direaction.y, direaction.x) * Mathf.Rad2Deg));
+        if (index >= 0 && gun.Count > 0)
+        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 direaction = mousePos - transform.position;
+            gun[index].transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(direaction.y, direaction.x) * Mathf.Rad2Deg));
 
-        float angle = Mathf.Atan2(direaction.y, direaction.x) * Mathf.Rad2Deg;
-        gun.position = transform.position + Quaternion.Euler(0, 0, angle) * new Vector3(gundistance, 0, 0);
 
-        GunFlipContoller(mousePos);
+            float angle = Mathf.Atan2(direaction.y, direaction.x) * Mathf.Rad2Deg;
+            gun[index].transform.position = transform.position + Quaternion.Euler(0, 0, angle) * new Vector3(gunDistance, 0, 0);
+
+            GunFlipContoller(mousePos);
+        }
+        else
+        {
+            return;
+        }
 
     }
 
     private void GunFlipContoller(Vector3 mousePos)
     {
-        if (mousePos.x < gun.position.x && gunFacingRight)
+        if (mousePos.x < gun[index].transform.position.x && gunFacingRight)
         {
             GunFilp();
         }
-        else if (mousePos.x > gun.position.x & !gunFacingRight)
+        else if (mousePos.x > gun[index].transform.position.x & !gunFacingRight)
         {
             GunFilp();
         }
@@ -52,6 +60,6 @@ public class AimmingDireaction : MonoBehaviour
     private void GunFilp()
     {
         gunFacingRight = !gunFacingRight;
-        gun.localScale = new Vector3(gun.localScale.x, gun.localScale.y * -1, gun.localScale.z);
+        gun[index].transform.localScale = new Vector3(gun[index].transform.localScale.x, gun[index].transform.localScale.y * -1, gun[index].transform.localScale.z);
     }
 }

@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("How fast wish you the player go")]
     [SerializeField] float playerSpeed;
     [SerializeField] bool playerFacingRight;
+    private AudioSource footsteps;
     #endregion
     #region
     [Header("Refreances Managed through code")]
@@ -35,11 +36,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] bool isDashBottonDown;
     [SerializeField] RaycastHit2D raycastHit2D;
     [SerializeField] LayerMask dashLayerMask;
+    [SerializeField] float lerpTimer;
+    [SerializeField] AudioSource dashAudio;
 
     #endregion
 
     void Awake()
     {
+        footsteps = GetComponent<AudioSource>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         trailRenderer = GetComponent<TrailRenderer>();
@@ -54,10 +58,46 @@ public class PlayerMovement : MonoBehaviour
         // Input handling
         Movemeant();
 
+        if (Input.GetKey(KeyCode.W))
+        {
+            if (!footsteps.isPlaying)
+            {
+                footsteps.Play();
+            }
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            if (!footsteps.isPlaying)
+            {
+                footsteps.Play();
+            }
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            if (!footsteps.isPlaying)
+            {
+                footsteps.Play();
+            }
+
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            if (!footsteps.isPlaying)
+            {
+                footsteps.Play();
+            }
+
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
+
             if (canDash)
             {
+                if (!dashAudio.isPlaying)
+                {
+                    dashAudio.Play();
+                }
                 isDashBottonDown = true;
             }
             else
@@ -85,6 +125,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (moveX == 0 && moveY == 0 && (moveMent.x != 0 || moveMent.y != 0))
         {
+
+
             lastMoveValue = moveMent;
 
             playerAnimator.SetFloat("LastMoveX", lastMoveValue.x);
@@ -94,11 +136,13 @@ public class PlayerMovement : MonoBehaviour
         moveMent.x = Input.GetAxisRaw("Horizontal");
         moveMent.y = Input.GetAxisRaw("Vertical");
 
+
         playerAnimator.SetFloat("Horizontal", moveMent.x);
         playerAnimator.SetFloat("Vertical", moveMent.y);
-
         playerAnimator.SetFloat("Speed", moveMent.sqrMagnitude);
         return moveMent.normalized;
+
+
     }
 
 
@@ -111,6 +155,7 @@ public class PlayerMovement : MonoBehaviour
             isDasing = true;
             trailRenderer.emitting = true;
 
+            //Vector2 dashPosition = rigidbody2D.position + Movemeant() * dashingPower;
             Vector2 dashPosition = rigidbody2D.position + Movemeant() * dashingPower;
 
             raycastHit2D = Physics2D.Raycast(rigidbody2D.position, Movemeant(), dashingPower, dashLayerMask);

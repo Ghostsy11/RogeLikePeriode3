@@ -1,0 +1,19 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/RogeLike/MenuStyles.uss?fileID=7433441132597879392&amp;guid=dd0a18f369c4f4a43b7572029c521b2f&amp;type=3#MenuStyles" />
+    <engine:VisualElement name="Menu" style="flex-grow: 1; flex-direction: row;">
+        <engine:VisualElement name="Countainer" style="flex-grow: 1; -unity-background-image-tint-color: rgb(255, 255, 255); width: 30%; height: 100%; background-color: rgba(0, 0, 0, 0.6); margin-left: 50px;">
+            <engine:VisualElement name="RightLeftSideHolder" style="flex-grow: 1; flex-direction: row; background-color: rgba(0, 0, 0, 0);">
+                <engine:VisualElement name="BackGround" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/RogeLike/CourseAssets/Textures/SpritesNotInAtlas/MainMenu.png?fileID=2800000&amp;guid=7982f2173aaf35042970eeb32efb1c8f&amp;type=3#MainMenu&quot;); -unity-background-image-tint-color: rgba(161, 30, 30, 0.13);">
+                    <engine:VisualElement name="BottonEle" style="flex-grow: 1; align-content: flex-start; justify-content: center; margin-top: 36px; margin-bottom: 0;">
+                        <engine:Button text="Play" name="Play" class="menu-button menu-botton" />
+                        <engine:Button text="Settings" name="Settings" class="menu-button menu-botton" />
+                        <engine:Button text="Quit" name="Quit" class="menu-button menu-botton" />
+                    </engine:VisualElement>
+                </engine:VisualElement>
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:VisualElement name="VisualElement" style="flex-grow: 1; flex-direction: row; width: 70%; background-color: rgba(0, 0, 0, 0);">
+            <engine:Button name="MuteBotton" class="menu-button menu-botton" style="align-content: auto; align-self: flex-end; justify-content: flex-end; align-items: flex-end; left: 1266px; width: 50px; height: 50px; background-image: url(&quot;project://database/Assets/RogeLike/unmute.png?fileID=2800000&amp;guid=e71ed36dbfa5324479cd6e703d6b9bea&amp;type=3#unmute&quot;); -unity-background-image-tint-color: rgb(188, 27, 12); background-color: rgba(255, 0, 7, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0); top: 8px; translate: -20px 0; margin-bottom: 20px;" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

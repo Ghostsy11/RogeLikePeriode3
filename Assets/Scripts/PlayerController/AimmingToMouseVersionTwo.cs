@@ -5,7 +5,7 @@ using UnityEngine;
 public class AimmingToMouseVersionTwo : MonoBehaviour
 {
 
-    [SerializeField] Camera camera;
+    Camera camera;
     private Vector3 mousePosition;
 
     void Start()
